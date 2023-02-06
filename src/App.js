@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import Event from './components/Event';
+import Location from './components/Location';
 
 function App() {
+  const concertDate = ["Tue Feb 14", "Sun Mar 26", "Sat Apr 22", "Fri May 5", "Fri Jun 2", "Mon Jul 24"];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* create a property called arena and passed it to the Location component */}
+      <Location arena="Madison Square Garden" />
+      {/* with props, data can only be passed down */}
+      <Event artist="Billy Joel" date={concertDate} time="8:00 PM" />
     </div>
   );
 }
